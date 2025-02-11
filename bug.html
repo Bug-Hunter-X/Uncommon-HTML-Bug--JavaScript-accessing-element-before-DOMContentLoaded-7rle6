@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // The problem lies in this script attempting to modify the content of a div
+    // that doesn't exist yet.  The script runs before the div is fully rendered.
+    document.getElementById("myDiv").innerHTML = "<p>Text changed by JavaScript.</p>"; 
+  </script>
+</body>
+</html>
